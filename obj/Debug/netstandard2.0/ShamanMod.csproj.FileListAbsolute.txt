@@ -1,0 +1,14 @@
+C:\Users\PC\Desktop\shamanmod\ShamanMod\bin\Debug\netstandard2.0\ShamanMod.deps.json
+C:\Users\PC\Desktop\shamanmod\ShamanMod\bin\Debug\netstandard2.0\ShamanMod.dll
+C:\Users\PC\Desktop\shamanmod\ShamanMod\bin\Debug\netstandard2.0\ShamanMod.pdb
+C:\Users\PC\Desktop\shamanmod\ShamanMod\bin\Debug\netstandard2.0\MMHOOK_RoR2.dll
+C:\Users\PC\Desktop\shamanmod\ShamanMod\bin\Debug\netstandard2.0\R2API.dll
+C:\Users\PC\Desktop\shamanmod\ShamanMod\bin\Debug\netstandard2.0\R2API.xml
+C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.AssemblyInfo.cs
+C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.csproj.CopyComplete
+C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.dll
+C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.pdb
