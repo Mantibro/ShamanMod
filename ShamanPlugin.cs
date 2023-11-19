@@ -32,7 +32,7 @@ namespace ShamanMod
         //   this shouldn't even have to be said
         public const string MODUID = "com.manti.ShamanMod";
         public const string MODNAME = "ShamanMod";
-        public const string MODVERSION = "1.0.2";
+        public const string MODVERSION = "1.0.3";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MANTI";
@@ -75,7 +75,6 @@ namespace ShamanMod
         {
             orig(self);
 
-            // a simple stat hook, adds armor after stats are recalculated
             if (self)
             {
                 if (self.HasBuff(Modules.Buffs.armorBuff))
@@ -88,6 +87,13 @@ namespace ShamanMod
                     self.armor += 10f;
                     self.baseDamage += 2f;
                     self.baseMaxHealth += 50f;
+                }
+
+                if (self.HasBuff(Modules.Buffs.acolyteFrenzyBuff))
+                {
+                    self.attackSpeed = self.attackSpeed * 2f;
+                    self.moveSpeed = self.moveSpeed * 2f;
+                    self.damage = self.damage * 1.5f;
                 }
             }
         }

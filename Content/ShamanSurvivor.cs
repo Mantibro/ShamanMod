@@ -213,7 +213,7 @@ namespace ShamanMod.Modules.Survivors
                 activationStateMachineName = "Slide",
                 baseMaxStock = 1,
                 baseRechargeInterval = 20f,
-                beginSkillCooldownOnSkillEnd = true,
+                beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
@@ -232,7 +232,7 @@ namespace ShamanMod.Modules.Survivors
             #endregion
 
             #region Special
-            SkillDef bombSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef ritualSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
                 skillName = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_NAME",
@@ -256,7 +256,32 @@ namespace ShamanMod.Modules.Survivors
                 stockToConsume = 1
             });
 
-            Modules.Skills.AddSpecialSkills(bodyPrefab, bombSkillDef);
+            SkillDef frenzySkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_NAME",
+                skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_NAME",
+                skillDescriptionToken = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialAlt"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FeralCall)),
+                activationStateMachineName = "Slide",
+                baseMaxStock = 1,
+                baseRechargeInterval = 40f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.Any,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = false,
+                cancelSprintingOnActivation = true,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1
+            });
+
+            Modules.Skills.AddSpecialSkills(bodyPrefab, ritualSkillDef);
+            Modules.Skills.AddSpecialSkills(bodyPrefab, frenzySkillDef);
             #endregion
         }
 

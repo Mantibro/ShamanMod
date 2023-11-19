@@ -13,6 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="other\**" />
+    <EmbeddedResource Remove="other\**" />
+    <None Remove="other\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="conscriptassetbundle" />
     <None Remove="conscriptbank.bnk" />
     <None Remove="HenryBank.bnk" />

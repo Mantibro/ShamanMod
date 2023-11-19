@@ -80,6 +80,9 @@ namespace ShamanMod.Modules
             #region Special
             LanguageAPI.Add(prefix + "SPECIAL_FUSION_NAME", "Ritual of Distorted Fusion");
             LanguageAPI.Add(prefix + "SPECIAL_FUSION_DESCRIPTION", $"Sacrifice all of your summoned Acolytes and summon a <style=cIsDamage>powerful ally</style>. At least 3 Acolytes are needed for the Ritual.");
+
+            LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_NAME", "Call of the Wild");
+            LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_DESCRIPTION", $"Have all of your Acolytes enter a <style=cIsDamage>Feral Frenzy</style> for 15 seconds, losing <color=#a80000>50% MAX HP</color>, but gaining massive <style=cIsDamage>damage</style> and <style=cIsUtility>speed</style> bonuses.");
             #endregion
 
             #region Achievements

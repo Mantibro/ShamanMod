@@ -10,6 +10,7 @@ namespace ShamanMod.Modules
         internal static BuffDef armorBuff;
         internal static BuffDef summonCooldownDebuff;
         internal static BuffDef acolyteBeastSummonBuff;
+        internal static BuffDef acolyteFrenzyBuff;
 
         internal static void RegisterBuffs()
         {
@@ -29,6 +30,12 @@ namespace ShamanMod.Modules
                 Assets.mainAssetBundle.LoadAsset<Sprite>("texCooldownDebuff"),
                 new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
                 true,
+                false);
+
+            acolyteFrenzyBuff = AddNewBuff("AcolyteFrenzyBuff",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("texCooldownDebuff"),
+                new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
+                false,
                 false);
         }
 
