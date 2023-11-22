@@ -56,16 +56,12 @@ namespace ShamanMod.Modules.Characters
         public override void InitializeCharacter()
         {
             base.InitializeCharacter();
-
-            //bodyPrefab.AddComponent<TowerWeaponComponent>();
-            //bodyPrefab.AddComponent<TowerOwnerTrackerComponent>();
         }
 
         protected override void InitializeCharacterBodyAndModel()
         {
             base.InitializeCharacterBodyAndModel();
 
-            //bodyPrefab.GetComponent<CharacterBody>().overrideCoreTransform = bodyPrefab.GetComponent<ChildLocator>().FindChild("Head");
             bodyPrefab.GetComponent<SfxLocator>().deathSound = "ShamanAcolyteGrowl";
             bodyPrefab.GetComponent<SfxLocator>().barkSound = "ShamanAcolyteGrowl";
         }

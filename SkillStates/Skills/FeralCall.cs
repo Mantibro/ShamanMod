@@ -37,7 +37,7 @@ namespace ShamanMod.SkillStates
 
                         }
                         Util.PlaySound("ShamanAcolyteFrenziedGrowl", cb.gameObject);
-                        EffectManager.SimpleImpactEffect(Modules.Assets.acolyteSummonEffect, gameObject.transform.position, Vector3.up, true);
+                        EffectManager.SimpleImpactEffect(Modules.Assets.acolyteSummonEffect, cb.gameObject.transform.position, Vector3.up, true);
                     }
                 }
             }
