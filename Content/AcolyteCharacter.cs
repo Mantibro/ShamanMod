@@ -310,6 +310,8 @@ namespace ShamanMod.Modules.Characters
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
+
+            skinController.skins = skins.ToArray();
         }
     }
 }
