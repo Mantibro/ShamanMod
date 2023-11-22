@@ -32,7 +32,7 @@ namespace ShamanMod
         //   this shouldn't even have to be said
         public const string MODUID = "com.manti.ShamanMod";
         public const string MODNAME = "ShamanMod";
-        public const string MODVERSION = "1.0.3";
+        public const string MODVERSION = "1.0.4";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MANTI";
@@ -115,7 +115,12 @@ namespace ShamanMod
                         MasterSummon manner = new MasterSummon();
 
                         manner.masterPrefab = Modules.Characters.AcolyteCharacter.masterPrefab;
-                        manner.inventoryToCopy = self.inventory;
+
+                        if (self.isPlayerControlled)
+                        {
+                            manner.inventoryToCopy = self.inventory;
+                        }
+
                         manner.teamIndexOverride = self.teamComponent.teamIndex;
                         manner.summonerBodyObject = self.gameObject;
                         manner.rotation = self.gameObject.transform.rotation;
@@ -124,7 +129,7 @@ namespace ShamanMod
                         manner.position = spawn_pos;
                         manner.Perform();
 
-                        float timeneeded = Mathf.Clamp(45f - ((self.attackSpeed - 1f) * 6f), 20f, 60f);
+                        float timeneeded = Mathf.Clamp(45f - ((self.attackSpeed - 1f) * 12f), 15f, 60f);
                         self.AddTimedBuff(Modules.Buffs.summonCooldownDebuff, timeneeded);
                     }
                 }
@@ -141,7 +146,7 @@ namespace ShamanMod
                     if (self.baseNameToken != DEVELOPER_PREFIX + "_SHAMAN_BODY_NAME")
                         return;
 
-                    float timeneeded = Mathf.Clamp(45f - ( ( self.attackSpeed - 1f ) * 6f), 20f, 60f);
+                    float timeneeded = Mathf.Clamp(45f - ( ( self.attackSpeed - 1f ) * 12f), 15f, 60f);
                     self.AddTimedBuff(Modules.Buffs.summonCooldownDebuff, timeneeded);
                 }
             }
