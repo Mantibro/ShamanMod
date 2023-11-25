@@ -10,7 +10,7 @@ using UnityEngine;
         private void OnEnable()
         {                              //Sounds.CharSelect
                     //presto! frame / framerate * animation speed in animator state 
-            StartCoroutine(delayedGunSound(1f / 24f, "ShamanLobby2"));
+            StartCoroutine(delayedGunSound(10f / 24f, "ShamanLobby2"));
         }
 
     private IEnumerator delayedGunSound(float delay, string playedSound)

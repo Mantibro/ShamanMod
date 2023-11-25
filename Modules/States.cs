@@ -28,6 +28,7 @@ namespace ShamanMod.Modules
             Modules.Content.AddEntityState(typeof(GhostVeil));
             Modules.Content.AddEntityState(typeof(Ancestry));
             Modules.Content.AddEntityState(typeof(DistortedFusion));
+            Modules.Content.AddEntityState(typeof(DistortedFusionScepter));
             Modules.Content.AddEntityState(typeof(FeralCall));
 
             Modules.Content.AddEntityState(typeof(StaffCast));

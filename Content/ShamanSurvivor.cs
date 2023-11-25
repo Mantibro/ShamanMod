@@ -282,7 +282,44 @@ namespace ShamanMod.Modules.Survivors
 
             Modules.Skills.AddSpecialSkills(bodyPrefab, ritualSkillDef);
             Modules.Skills.AddSpecialSkills(bodyPrefab, frenzySkillDef);
+
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter"))
+            {
+                InitScepterSkills();
+            }
+
             #endregion
+        }
+
+        private void InitScepterSkills()
+        {
+            string prefix = ShamanPlugin.DEVELOPER_PREFIX;
+
+            SkillDef scepterritualSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_NAME",
+                skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_NAME",
+                skillDescriptionToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecial"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DistortedFusionScepter)),
+                activationStateMachineName = "Body",
+                baseMaxStock = 1,
+                baseRechargeInterval = 5f,
+                beginSkillCooldownOnSkillEnd = true,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.Any,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = false,
+                cancelSprintingOnActivation = true,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1
+            });
+
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(scepterritualSkillDef, "ShamanBody", SkillSlot.Special, 0);
         }
 
         public override void InitializeSkins()

@@ -63,7 +63,7 @@ namespace ShamanMod.Modules
 
             #region Secondary
             LanguageAPI.Add(prefix + "SECONDARY_HEALORB_NAME", "Wad of Earth");
-            LanguageAPI.Add(prefix + "SECONDARY_HEALORB_DESCRIPTION", $"Fire a magic orb which explodes and <style=cIsHealing>heals</style> your allies for <style=cIsHealing>{100f * StaticValues.staffHealingCoefficient}% damage</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_HEALORB_DESCRIPTION", $"Fire a magic orb which explodes and <style=cIsHealing>heals</style> you and your allies for <style=cIsHealing>{100f * StaticValues.staffHealingCoefficient}% damage</style>.");
 
             LanguageAPI.Add(prefix + "SECONDARY_ALT_CURSEORB_NAME", "Vestige of Thorns");
             LanguageAPI.Add(prefix + "SECONDARY_ALT_CURSEORB_DESCRIPTION", $"Fire a cursed skull which explodes for <style=cIsDamage>{100f * StaticValues.staffCurseCoefficient}% damage</style>, <style=cIsDamage>Cripples</style> and <style=cIsDamage>Curses</style> enemies.");
@@ -78,8 +78,14 @@ namespace ShamanMod.Modules
             #endregion
 
             #region Special
+
+            string specialDesc = $"Sacrifice all of your summoned Acolytes and summon a <style=cIsDamage>powerful ally</style>. At least 3 Acolytes are needed for the Ritual.";
+
             LanguageAPI.Add(prefix + "SPECIAL_FUSION_NAME", "Ritual of Distorted Fusion");
-            LanguageAPI.Add(prefix + "SPECIAL_FUSION_DESCRIPTION", $"Sacrifice all of your summoned Acolytes and summon a <style=cIsDamage>powerful ally</style>. At least 3 Acolytes are needed for the Ritual.");
+            LanguageAPI.Add(prefix + "SPECIAL_FUSION_DESCRIPTION", specialDesc);
+
+            LanguageAPI.Add(prefix + "SPECIAL_FUSION_SCEPTER_NAME", "Ritual of Twisted Fusion");
+            LanguageAPI.Add(prefix + "SPECIAL_FUSION_SCEPTER_DESCRIPTION", specialDesc + Helpers.ScepterDescription($"Summon two guardian <style=cIsDamage>Stone Golems</style> after the ritual that <style=cIsUtility>inherit all your items</style>."));
 
             LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_NAME", "Call of the Wild");
             LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_DESCRIPTION", $"Have all of your Acolytes enter a <style=cIsDamage>Feral Frenzy</style> for 15 seconds, losing <color=#a80000>50% MAX HP</color>, but gaining massive <style=cIsDamage>damage</style> and <style=cIsUtility>speed</style> bonuses.");
