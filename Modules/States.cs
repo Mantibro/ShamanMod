@@ -24,12 +24,17 @@ namespace ShamanMod.Modules
             Modules.Content.AddEntityState(typeof(AcolyteBeastShootAttack));
             Modules.Content.AddEntityState(typeof(AcolyteBeastMeleeSwipe));
             Modules.Content.AddEntityState(typeof(AcolyteBeastMeleeSlam));
+            Modules.Content.AddEntityState(typeof(AcolyteAngelShootAttack));
+            Modules.Content.AddEntityState(typeof(AcolyteAngelProjectileAttack));
+            Modules.Content.AddEntityState(typeof(AcolyteAngelCurseShoot));
+
 
             Modules.Content.AddEntityState(typeof(GhostVeil));
             Modules.Content.AddEntityState(typeof(Ancestry));
             Modules.Content.AddEntityState(typeof(DistortedFusion));
             Modules.Content.AddEntityState(typeof(DistortedFusionScepter));
             Modules.Content.AddEntityState(typeof(FeralCall));
+            Modules.Content.AddEntityState(typeof(FeralCallScepter));
 
             Modules.Content.AddEntityState(typeof(StaffCast));
             Modules.Content.AddEntityState(typeof(StaffHealingSkill));

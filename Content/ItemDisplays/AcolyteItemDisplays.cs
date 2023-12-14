@@ -1042,6 +1042,129 @@ namespace ShamanMod.Modules.Characters
 
             #endregion
 
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.KomradeSpectre.Aetherium"))
+            {
+                SetAetheriumDisplayRules(itemDisplayRules);
+            }
+
         }
+
+        #region aeth
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private void SetAetheriumDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
+        {
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.AccursedPotion.instance.ItemDef,
+                                                                       Aetherium.Items.AccursedPotion.ItemBodyModelPrefab,
+                                                                       "Hips",
+                                                                       new Vector3(-0.12946F, 0.05655F, -0.09089F),
+                                                                       new Vector3(352.1309F, 2.07741F, 0.27456F),
+                                                                       new Vector3(0.06197F, 0.06197F, 0.06197F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.AlienMagnet.instance.ItemDef,
+                                                                       Aetherium.Items.AlienMagnet.ItemBodyModelPrefab,
+                                                                       "Root",
+                                                                       new Vector3(-0.85034F, 1.83867F, -0.0771F),
+                                                                       new Vector3(351.4943F, 0F, 0F),
+                                                                       new Vector3(0.10931F, 0.10931F, 0.10931F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.BlasterSword.instance.ItemDef,
+                                                                       Aetherium.Items.BlasterSword.ItemBodyModelPrefab,
+                                                                       "LowerArmL",
+                                                                       new Vector3(-0.03489F, 0.80027F, 0.04625F),
+                                                                       new Vector3(0F, 316.0607F, 180F),
+                                                                       new Vector3(0.05965F, 0.05965F, 0.05965F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.BloodthirstyShield.instance.ItemDef,
+                                                                       Aetherium.Items.BloodthirstyShield.ItemBodyModelPrefab,
+                                                                       "LowerArmR",
+                                                                       new Vector3(0.00222F, 0.41343F, 0.08069F),
+                                                                       new Vector3(1.48965F, 353.3753F, 10.35441F),
+                                                                       new Vector3(0.18505F, 0.18505F, 0.18505F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.EngineersToolbelt.instance.ItemDef,
+                                                                       Aetherium.Items.EngineersToolbelt.ItemBodyModelPrefab,
+                                                                       "Hips",
+                                                                       new Vector3(0F, 0.0545F, 0.0031F),
+                                                                       new Vector3(357.8437F, 0F, 0F),
+                                                                       new Vector3(0.17904F, 0.12389F, 0.1273F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.FeatheredPlume.instance.ItemDef,
+                                                                       Aetherium.Items.FeatheredPlume.ItemBodyModelPrefab,
+                                                                       "Chest",
+                                                                       new Vector3(-0.12944F, 0.30726F, -0.16674F),
+                                                                       new Vector3(305.0129F, 82.94401F, 337.0811F),
+                                                                       new Vector3(0.25964F, 0.18505F, 0.23623F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.Voidheart.instance.ItemDef,
+                                                                       Aetherium.Items.Voidheart.ItemBodyModelPrefab,
+                                                                       "Chest",
+                                                                       new Vector3(-0.02262F, 0.1078F, 0.18193F),
+                                                                       new Vector3(15.57688F, 341.2918F, 353.7321F),
+                                                                       new Vector3(0.09114F, 0.09114F, 0.09114F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.InspiringDrone.instance.ItemDef,
+                                                                       Aetherium.Items.InspiringDrone.ItemBodyModelPrefab,
+                                                                       "Root",
+                                                                       new Vector3(0.52308F, 2.46091F, -0.01632F),
+                                                                       new Vector3(0F, 0F, 0F),
+                                                                       new Vector3(0.16571F, 0.16571F, 0.16571F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.NailBomb.instance.ItemDef,
+                                                                       Aetherium.Items.NailBomb.ItemBodyModelPrefab,
+                                                                       "Neck",
+                                                                       new Vector3(0F, 0.0846F, -0.1199F),
+                                                                       new Vector3(287.8274F, 180F, 180F),
+                                                                       new Vector3(0.09878F, 0.09878F, 0.09878F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.SharkTeeth.instance.ItemDef,
+                                                                       Aetherium.Items.SharkTeeth.ItemBodyModelPrefab,
+                                                                       "Head",
+                                                                       new Vector3(0F, 0.28772F, -0.01749F),
+                                                                       new Vector3(291.1072F, -0.00005F, 180F),
+                                                                       new Vector3(0.19223F, 0.19466F, 0.14597F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.ShieldingCore.instance.ItemDef,
+                                                                       Aetherium.Items.ShieldingCore.ItemBodyModelPrefab,
+                                                                       "Chest",
+                                                                       new Vector3(0.10856F, 0.21605F, -0.10656F),
+                                                                       new Vector3(36.81234F, 222.0987F, 60.4989F),
+                                                                       new Vector3(0.27672F, 0.27672F, 0.27672F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.UnstableDesign.instance.ItemDef,
+                                                                       Aetherium.Items.UnstableDesign.ItemBodyModelPrefab,
+                                                                       "Chest",
+                                                                       new Vector3(0.00771F, -0.03459F, -0.19881F),
+                                                                       new Vector3(359.6312F, 44.63949F, 0.45308F),
+                                                                       new Vector3(0.88639F, 0.88639F, 0.88639F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.WeightedAnklet.instance.ItemDef,
+                                                                       Aetherium.Items.WeightedAnklet.ItemBodyModelPrefab,
+                                                                       "CalfL",
+                                                                       new Vector3(0.0045F, 0.21071F, 0.01637F),
+                                                                       new Vector3(3.47227F, 0F, 7.27702F),
+                                                                       new Vector3(0.20588F, 0.15922F, 0.18731F)));
+
+            itemDisplayRules.Add(ItemDisplays.CreateDisplayRuleGroupWithRules(Aetherium.Items.WitchesRing.instance.ItemDef,
+                ItemDisplays.CreateDisplayRule(Aetherium.Items.WitchesRing.ItemBodyModelPrefab,
+                                               "LowerArmL",
+                                                                       new Vector3(0.00313F, 0.39397F, 0.00084F),
+                                                                       new Vector3(4.55092F, 359.2983F, 354.1099F),
+                                                                       new Vector3(0.236F, 0.2564F, 0.236F)),
+                ItemDisplays.CreateDisplayRule(Aetherium.Items.WitchesRing.CircleBodyModelPrefab,
+                                               "LowerArmL",
+                                                                       new Vector3(0.00625F, 0.38271F, 0.0752F),
+                                                                       new Vector3(0F, 0F, 0F),
+                                                                       new Vector3(0.18255F, 0.18255F, 0.01054F))
+                ));
+
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(Aetherium.Items.ZenithAccelerator.instance.ItemDef,
+                                                                       Aetherium.Items.ZenithAccelerator.ItemBodyModelPrefab,
+                                                                       "Chest",
+                                                                       new Vector3(0.00222F, 0.256F, -0.25856F),
+                                                                       new Vector3(295.6192F, 3.67244F, 350.2317F),
+                                                                       new Vector3(0.1688F, 0.1688F, 0.1688F)));
+        }
+        #endregion aeth
     }
 }

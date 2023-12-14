@@ -33,8 +33,8 @@ namespace ShamanMod.Modules
                 false);
 
             acolyteFrenzyBuff = AddNewBuff("AcolyteFrenzyBuff",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texCooldownDebuff"),
-                new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
+                Assets.mainAssetBundle.LoadAsset<Sprite>("texFeralBuff"),
+                new Color(0.8f, 0f, 0f),
                 false,
                 false);
         }

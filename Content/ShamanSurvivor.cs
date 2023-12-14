@@ -1,6 +1,7 @@
 ﻿using BepInEx.Configuration;
 using ShamanMod.Modules.Characters;
 using RoR2;
+using R2API;
 using RoR2.Skills;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace ShamanMod.Modules.Survivors
             bodyName = "ShamanBody",
             bodyNameToken = SHAMAN_PREFIX + "NAME",
             subtitleNameToken = SHAMAN_PREFIX + "SUBTITLE",
+            sortPosition = 20f,
 
             characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("iconShaman"),
             bodyColor = new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
@@ -71,7 +73,7 @@ namespace ShamanMod.Modules.Survivors
         public override void InitializeUnlockables()
         {
             //uncomment this when you have a mastery skin. when you do, make sure you have an icon too
-            //masterySkinUnlockableDef = Modules.Unlockables.AddUnlockable<Modules.Achievements.MasteryAchievement>();
+           // masterySkinUnlockableDef = UnlockableAPI.AddUnlockable<Modules.Achievements.MasteryAchievement>();
         }
 
         public override void InitializeHitboxes()
@@ -300,7 +302,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecial"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialScepter"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DistortedFusionScepter)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
@@ -320,6 +322,32 @@ namespace ShamanMod.Modules.Survivors
             });
 
             AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(scepterritualSkillDef, "ShamanBody", SkillSlot.Special, 0);
+
+            SkillDef scepterFeralSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_SCEPTER_NAME",
+                skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_SCEPTER_NAME",
+                skillDescriptionToken = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_SCEPTER_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialAltScepter"),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FeralCallScepter)),
+                activationStateMachineName = "Slide",
+                baseMaxStock = 1,
+                baseRechargeInterval = 40f,
+                beginSkillCooldownOnSkillEnd = false,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.Any,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = false,
+                cancelSprintingOnActivation = true,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1
+            });
+
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(scepterFeralSkillDef, "ShamanBody", SkillSlot.Special, 1);
         }
 
         public override void InitializeSkins()
@@ -340,10 +368,9 @@ namespace ShamanMod.Modules.Survivors
 
             //these are your Mesh Replacements. The order here is based on your CustomRendererInfos from earlier
             //pass in meshes as they are named in your assetbundle
-                //defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRendererinfos,
-                //"krontroop",
-                //"krongun",
-                //"kronbaton");
+                defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRendererinfos,
+                "shamanMesh",
+                "shamanStaffMesh");
 
             //add new skindef to our list of skindefs. this is what we'll be passing to the SkinController
             skins.Add(defaultSkin);
@@ -353,7 +380,7 @@ namespace ShamanMod.Modules.Survivors
             #region MasterySkin
             
             //creating a new skindef as we did before
-            /*SkinDef masterySkin = Modules.Skins.CreateSkinDef(ShamanPlugin.DEVELOPER_PREFIX + "_SHAMAN_BODY_MASTERY_SKIN_NAME",
+            SkinDef masterySkin = Modules.Skins.CreateSkinDef(ShamanPlugin.DEVELOPER_PREFIX + "_SHAMAN_BODY_MASTERY_SKIN_NAME",
                 Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanMastery"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
@@ -362,28 +389,15 @@ namespace ShamanMod.Modules.Survivors
             //adding the mesh replacements as above. 
             //if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
             masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRendererinfos,
-                "kronmastery",
-                null,//no gun mesh replacement. use same gun mesh
-                "kronmasterybaton");
+                "shamanMasteryMesh",
+                null);
 
             //masterySkin has a new set of RendererInfos (based on default rendererinfos)
             //you can simply access the RendererInfos defaultMaterials and set them to the new materials for your skin.
-            masterySkin.rendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("kronMasteryMaterial");
-            masterySkin.rendererInfos[1].defaultMaterial = Modules.Materials.CreateHopooMaterial("kronMasteryMaterial");
-            masterySkin.rendererInfos[2].defaultMaterial = Modules.Materials.CreateHopooMaterial("kronMasteryMaterial");
+            masterySkin.rendererInfos[0].defaultMaterial = Modules.Materials.CreateHopooMaterial("shamanMasteryMaterial");
+            masterySkin.rendererInfos[1].defaultMaterial = Modules.Materials.CreateHopooMaterial("shamanStaffMaterial");
 
-            //here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
-            /*masterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-            {
-                new SkinDef.GameObjectActivation
-                {
-                    gameObject = childLocator.FindChildGameObject("GunModel"),
-                    shouldActivate = false,
-                }
-            };
-            //simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
-
-            skins.Add(masterySkin);*/
+            skins.Add(masterySkin);
             
             #endregion
 

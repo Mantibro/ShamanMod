@@ -32,7 +32,7 @@ namespace ShamanMod
         //   this shouldn't even have to be said
         public const string MODUID = "com.manti.ShamanMod";
         public const string MODNAME = "ShamanMod";
-        public const string MODVERSION = "1.0.6";
+        public const string MODVERSION = "1.1.0";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MANTI";
@@ -56,6 +56,7 @@ namespace ShamanMod
             new ShamanSurvivor().Initialize();
             new Modules.Characters.AcolyteCharacter().Initialize();
             new Modules.Characters.AcolyteBeastCharacter().Initialize();
+            new Modules.Characters.AcolyteAngelCharacter().Initialize();
 
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();

@@ -80,15 +80,19 @@ namespace ShamanMod.Modules
             #region Special
 
             string specialDesc = $"Sacrifice all of your summoned Acolytes and summon a <style=cIsDamage>powerful ally</style>. At least 3 Acolytes are needed for the Ritual.";
+            string specialAltDesc = $"Have all of your Acolytes enter a <style=cIsDamage>Feral Frenzy</style> for 15 seconds, losing <color=#a80000>50% MAX HP</color>, but gaining massive <style=cIsDamage>damage</style> and <style=cIsUtility>speed</style> bonuses.";
 
             LanguageAPI.Add(prefix + "SPECIAL_FUSION_NAME", "Ritual of Distorted Fusion");
             LanguageAPI.Add(prefix + "SPECIAL_FUSION_DESCRIPTION", specialDesc);
 
-            LanguageAPI.Add(prefix + "SPECIAL_FUSION_SCEPTER_NAME", "Ritual of Twisted Fusion");
-            LanguageAPI.Add(prefix + "SPECIAL_FUSION_SCEPTER_DESCRIPTION", specialDesc + Helpers.ScepterDescription($"Summon two guardian <style=cIsDamage>Stone Golems</style> after the ritual that <style=cIsUtility>inherit all your items</style>."));
+            LanguageAPI.Add(prefix + "SPECIAL_FUSION_SCEPTER_NAME", "Ritual of Preeminent Fusion");
+            LanguageAPI.Add(prefix + "SPECIAL_FUSION_SCEPTER_DESCRIPTION", specialDesc + Helpers.ScepterDescription($"A minimum of 6 Acolytes are needed to summon a <style=cIsDamage>godly ally</style> that <style=cIsUtility>inherits all your items</style>."));
 
             LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_NAME", "Call of the Wild");
-            LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_DESCRIPTION", $"Have all of your Acolytes enter a <style=cIsDamage>Feral Frenzy</style> for 15 seconds, losing <color=#a80000>50% MAX HP</color>, but gaining massive <style=cIsDamage>damage</style> and <style=cIsUtility>speed</style> bonuses.");
+            LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_DESCRIPTION", specialAltDesc);
+
+            LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_SCEPTER_NAME", "Call of Shared Rage");
+            LanguageAPI.Add(prefix + "SPECIAL_ALT_FERALCALL_SCEPTER_DESCRIPTION", specialAltDesc + Helpers.ScepterDescription($"<style=cIsUtility>EVERY ally</style> will be affected, and the <color=#a80000>MAX HP</color> debuff will no longer be applied."));
             #endregion
 
             #region Achievements
@@ -154,6 +158,24 @@ namespace ShamanMod.Modules
             lore = lore + $"All in service of their kin's war." + Environment.NewLine;
 
             LanguageAPI.Add(acb_prefix + "LORE", lore);
+
+            string aca_prefix = ShamanPlugin.DEVELOPER_PREFIX + "_ACOLYTEANGEL_BODY_";
+            LanguageAPI.Add(aca_prefix + "NAME", "Acolytic Preeminence");
+            LanguageAPI.Add(aca_prefix + "SUBTITLE", "Strength of Quantity");
+
+            lore = $"You." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"You are not welcome here." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"You are undeserving of my protection." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"You." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"I have to save them from YOU." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"You spread like fungal spores, then grow yourselves into intelligent warlocks to carry those infectious spores even further." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"You massacre innocent beings just to increase your numbers." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"I will not let you take this world as your own." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"You are weak." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"..." + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"But your quantity is strong." + Environment.NewLine + Environment.NewLine;
+
+            LanguageAPI.Add(aca_prefix + "LORE", lore);
 
             #endregion
         }

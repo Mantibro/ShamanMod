@@ -13,3 +13,4 @@ C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.cspro
 C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.dll
 C:\Users\PC\Desktop\shamanmod\ShamanMod\obj\Debug\netstandard2.0\ShamanMod.pdb
 C:\Users\PC\Desktop\shamanmod\ShamanMod\bin\Debug\netstandard2.0\AncientScepter.dll
+C:\Users\PC\Desktop\shamanmod\ShamanMod\bin\Debug\netstandard2.0\Aetherium.dll

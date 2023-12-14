@@ -289,7 +289,17 @@ namespace ShamanMod.Modules {
         //}
 
         private static void SetupCapsuleCollider(GameObject prefab) {
-            CapsuleCollider capsuleCollider = prefab.GetComponent<CapsuleCollider>();
+            CapsuleCollider capsuleCollider = null;
+
+            if (prefab.GetComponent<CapsuleCollider>() == null)
+            {
+                capsuleCollider = prefab.AddComponent(typeof(CapsuleCollider)) as CapsuleCollider;
+            }
+            else
+            {
+                capsuleCollider = prefab.GetComponent<CapsuleCollider>();
+            }
+
             capsuleCollider.center = new Vector3(0f, 0f, 0f);
             capsuleCollider.radius = 0.5f;
             capsuleCollider.height = 1.82f;

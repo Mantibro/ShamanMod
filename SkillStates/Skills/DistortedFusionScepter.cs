@@ -46,7 +46,7 @@ namespace ShamanMod.SkillStates
                 }
             }
 
-            if (noSacrificed < 3)
+            if (noSacrificed < 6)
             {
                 Util.PlaySound("ShamanCastFusionFail", base.gameObject);
                 EffectManager.SimpleMuzzleFlash(Modules.Assets.magicImpact2Effect, base.gameObject, this.muzzleString, false);
@@ -56,7 +56,7 @@ namespace ShamanMod.SkillStates
 
             base.OnEnter();
 
-            Util.PlaySound("ShamanCastFusion", base.gameObject);
+            Util.PlaySound("ShamanAcolyteAngelFuse", base.gameObject);
             EffectManager.SimpleMuzzleFlash(Modules.Assets.castFusionEffect, base.gameObject, this.muzzleString, false);
 
             this.duration = 4f;
@@ -72,7 +72,7 @@ namespace ShamanMod.SkillStates
 
         private void Fire()
         {
-            if (!this.hasFired && noSacrificed > 2)
+            if (!this.hasFired && noSacrificed > 5)
             {
                 this.hasFired = true;
 
@@ -93,12 +93,13 @@ namespace ShamanMod.SkillStates
                 if (NetworkServer.active)
                 {
                     base.characterBody.SendConstructTurret(base.characterBody,
-                            base.gameObject.transform.position + new Vector3(0f, 10f, 0f),
+                            base.gameObject.transform.position + new Vector3(0f, 20f, 0f),
                             base.gameObject.transform.rotation,
-                            MasterCatalog.FindMasterIndex(Modules.Characters.AcolyteBeastCharacter.masterPrefab));
+                            MasterCatalog.FindMasterIndex(Modules.Characters.AcolyteAngelCharacter.masterPrefab));
                 }
 
-                Util.PlaySound("ShamanSummonAcolyteBeast", base.gameObject);
+                Util.PlaySound("ShamanSummonAcolyteAngel", base.gameObject);
+                Util.PlaySound("ShamanAcolyteAngelBirth", base.gameObject);
             }
         }
 
@@ -110,16 +111,16 @@ namespace ShamanMod.SkillStates
 
             foreach (CharacterBody cb in literallyeverything as CharacterBody[])
             {
-                if (cb.baseNameToken == "MANTI_ACOLYTEBEAST_BODY_NAME" && cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex)
+                if (cb.baseNameToken == "MANTI_ACOLYTEANGEL_BODY_NAME" && cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex)
                 {
                     if (NetworkServer.active && cb.master && cb.master.minionOwnership.ownerMaster.GetBody() == base.characterBody)
                     {
-                        if (noSacrificed < 3)
+                        if (noSacrificed < 8)
                             continue;
 
                         cb.healthComponent.HealFraction(1f, default);
 
-                        for (int j = 0; j < (noSacrificed - 2); j++)
+                        for (int j = 0; j < (noSacrificed - 5); j++)
                         {
                             cb.AddTimedBuff(Modules.Buffs.acolyteBeastSummonBuff, 600f);
                         }
@@ -130,27 +131,6 @@ namespace ShamanMod.SkillStates
             }
 
             noSacrificed = 0;
-
-            //cool scepter
-
-            for (int j = 0; j < 2; j++)
-            {
-
-                MasterSummon manner = new MasterSummon();
-                manner.masterPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/CharacterMasters/GolemMaster");
-                if (base.characterBody.isPlayerControlled)
-                {
-                    manner.inventoryToCopy = base.characterBody.inventory;
-                }
-                manner.teamIndexOverride = base.teamComponent.teamIndex;
-                manner.summonerBodyObject = base.gameObject;
-                manner.rotation = base.gameObject.transform.rotation;
-
-                Vector3 spawn_pos = base.gameObject.transform.position + new Vector3((UnityEngine.Random.value * 6f) - 3f, 0.1f + (UnityEngine.Random.value * 0.25f), (UnityEngine.Random.value * 6f) - 3f);
-                manner.position = spawn_pos;
-                manner.Perform();
-
-            }
         }
 
         public override void FixedUpdate()

@@ -25,7 +25,7 @@ namespace ShamanMod.Modules.Characters
             armorGrowth = 0f,
             bodyName = "AcolyteBeastBody",
             bodyNameToken = ACOLYTE_PREFIX + "NAME",
-            subtitleNameToken = ShamanPlugin.DEVELOPER_PREFIX + "_ACOLYTE_SUBTITLE",
+            subtitleNameToken = ShamanPlugin.DEVELOPER_PREFIX + "_ACOLYTEBEAST_SUBTITLE",
             bodyNameToClone = "Lemurian",
             bodyColor = new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
             characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texAcolyteBeastIcon"),
