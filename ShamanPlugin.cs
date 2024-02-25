@@ -32,7 +32,7 @@ namespace ShamanMod
         //   this shouldn't even have to be said
         public const string MODUID = "com.manti.ShamanMod";
         public const string MODNAME = "ShamanMod";
-        public const string MODVERSION = "1.1.0";
+        public const string MODVERSION = "1.1.1";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MANTI";
@@ -130,7 +130,7 @@ namespace ShamanMod
                         manner.position = spawn_pos;
                         manner.Perform();
 
-                        float timeneeded = Mathf.Clamp(45f - ((self.attackSpeed - 1f) * 12f), 15f, 60f);
+                        float timeneeded = Mathf.Clamp(45f - ((self.attackSpeed - 1f) * 10f), 15f, 60f);
                         self.AddTimedBuff(Modules.Buffs.summonCooldownDebuff, timeneeded);
                     }
                 }
@@ -147,8 +147,8 @@ namespace ShamanMod
                     if (self.baseNameToken != DEVELOPER_PREFIX + "_SHAMAN_BODY_NAME")
                         return;
 
-                    float timeneeded = Mathf.Clamp(45f - ( ( self.attackSpeed - 1f ) * 12f), 15f, 60f);
-                    self.AddTimedBuff(Modules.Buffs.summonCooldownDebuff, timeneeded);
+                    //float timeneeded = Mathf.Clamp(45f - ( ( self.attackSpeed - 1f ) * 10f), 15f, 60f);
+                    self.AddTimedBuff(Modules.Buffs.summonCooldownDebuff, 5f);
                 }
             }
         }

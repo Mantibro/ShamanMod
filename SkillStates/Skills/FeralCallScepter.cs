@@ -20,6 +20,11 @@ namespace ShamanMod.SkillStates
 
             foreach (CharacterBody cb in literallyeverything as CharacterBody[])
             {
+                if (cb == null) continue;
+                if (cb.gameObject == null) continue;
+                if (cb.gameObject.GetComponent<TeamComponent>() == null) continue;
+                if (base.gameObject.GetComponent<TeamComponent>() == null) continue;
+
                 if (cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex && cb != base.characterBody)
                 {
                      if (NetworkServer.active)

@@ -20,9 +20,16 @@ namespace ShamanMod.SkillStates
 
             foreach (CharacterBody cb in literallyeverything as CharacterBody[])
             {
+                if (cb == null) continue;
+                if (cb.gameObject == null) continue;
+                if (cb.gameObject.GetComponent<TeamComponent>() == null) continue;
+                if (base.gameObject.GetComponent<TeamComponent>() == null) continue;
+                if (cb.master == null) continue;
+                if (cb.master.minionOwnership == null) continue;
+                if (cb.master.minionOwnership.ownerMaster == null) continue;
+
                 if (cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex && cb != base.characterBody)
                 {
-
                     if (cb.master && cb.master.minionOwnership.ownerMaster.GetBody() == base.characterBody && cb.baseNameToken == "MANTI_ACOLYTE_BODY_NAME" )
                     {
                         if (NetworkServer.active)

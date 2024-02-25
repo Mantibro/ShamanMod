@@ -26,19 +26,22 @@ namespace ShamanMod.Modules
 
             string lore = $"This is the logbook entry of D. Furthen, naturalist for the UES [Redacted] in conjunction with the UES Research and Documentation of Outer Life. I am joined by my good friend Tharson, who is keeping me safe through this journey.";
             lore = lore + Environment.NewLine + Environment.NewLine + "---------------------" + Environment.NewLine + Environment.NewLine;
-            lore = lore + $"Arriving onto the planet once more, a creature that seemingly appeared from out of thin-air. Given previous encounters with the wildlife on this planet, we assumed that it was another creature who upon seeing us would become hostile , we were pleasantly surprised that this one seemed to be welcoming of our presence. It even motioned for us to come to come closer.";
+            lore = lore + $"Arriving onto the planet once more, a creature that seemingly appeared out of thin air. Given previous encounters with the wildlife on this planet, we assumed that it was another being who upon seeing us would become hostile, so we were pleasantly surprised that this one seemed to be welcoming of our presence. It even motioned for us to come to come closer.";
             lore = lore + Environment.NewLine + Environment.NewLine + Environment.NewLine;
-            lore = lore + $"I will describe its properties below. I have assigned its common name as `Shaman.`";
+            lore = lore + $"I will describe its properties below. I have assigned its common name as `The Shaman.`";
             lore = lore + Environment.NewLine + Environment.NewLine + Environment.NewLine;
-            lore = lore + $"* Tall, bipedal creatures loosely resembling humans but clearly alien. They wear a robe on their body and the skull of an unknown creature over their head that would fit the description of someone of the occult.";
+            lore = lore + $"* Tall, possibly bipedal creatures with a loosely humanoid appearance, but clearly alien. They wear a robe on their body and a skull of an unknown beast over their eyeball-like head.";
             lore = lore + Environment.NewLine + Environment.NewLine + Environment.NewLine;
-            lore = lore + $"* Highly intelligent, they show that they can understand what me and Tharson are saying despite speaking in an unintelligible language. This language barrier however was remedied by body language and motions from their hands.";
+            lore = lore + $"* Highly intelligent, they show that they can understand what me and Tharson are saying despite speaking in an unintelligible language, full of clicks and shrieks of weirdly melodic intonation. This language barrier, however, was partly remedied by simple hand signals.";
             lore = lore + Environment.NewLine + Environment.NewLine + Environment.NewLine;
-            lore = lore + $"* When observed from a distance being attacked by the inhabitants of this planet, The creature would wield a staff and would defend itself by launching projectiles of unknown energy out of it.";
+            lore = lore + $"* When observed from a distance being attacked by the inhabitants of this planet, the creature would wield a staff and defend itself by launching projectiles of unknown energy out of it.";
             lore = lore + Environment.NewLine + Environment.NewLine + Environment.NewLine;
-            lore = lore + $"* During the same encounter with the wildlife, creatures would emerge out of small orbs, or `seeds` that the Shaman would throw onto the ground. These creatures would go and fight for the Shaman, obeying its vocalized commands. If the creatures ever showed signs of fatigue or rebellion, the Shaman would lift its staff high in the air and point at the culprit, shouting something loudly. Upon this, all of the creatures, including the offerder would kneel down and stay quiet until the Shaman lowered its staff. ";
+            lore = lore + $"* Every once in a while, creatures would emerge out of small orbs, or `seeds` that the Shaman would throw onto the ground. These creatures followed us and the Shaman around, obeying its vocalized commands, and defending us all from incoming danger. If the creatures ever showed signs of fatigue or rebellion, the Shaman would lift its staff high in the air and point at the culprit, shouting something loudly in their confusing language. Upon this, all of the creatures, including the offender would kneel down and stay quiet until the Shaman lowered its staff. Perhaps the Shamans have a method of applying discipline that is yet unknown to us.";
             lore = lore + Environment.NewLine + Environment.NewLine + Environment.NewLine;
             lore = lore + $"We have decided to call these neophytes `Acolytes` to fit with the name given to the creature.";
+            lore = lore + Environment.NewLine + Environment.NewLine + Environment.NewLine;
+            lore = lore + $"- - - APPENDIX:" + Environment.NewLine;
+            lore = lore + $"* The Shamans and the Acolytes are something a lot more major than we have previously thought. Given our previous observations of the creatures, it is clear that they are not native to this Planet. Word from other research departments has given us a revelation which could be quite worrying. The Acolytes are a heavily invasive species to many habitable planets. I should keep this brief. They may be friendly to humans, but we should keep our distance. For the good of us all.";
 
             LanguageAPI.Add(prefix + "LORE", lore);
             #endregion
