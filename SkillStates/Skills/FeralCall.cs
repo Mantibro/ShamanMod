@@ -30,7 +30,7 @@ namespace ShamanMod.SkillStates
 
                 if (cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex && cb != base.characterBody)
                 {
-                    if (cb.master && cb.master.minionOwnership.ownerMaster.GetBody() == base.characterBody && cb.baseNameToken == "MANTI_ACOLYTE_BODY_NAME" )
+                    if (cb.master && cb.master.minionOwnership.ownerMaster.GetBody() == base.characterBody && cb.name == "AcolyteBody(Clone)" )
                     {
                         if (NetworkServer.active)
                         {
