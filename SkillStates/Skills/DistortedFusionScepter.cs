@@ -45,7 +45,7 @@ namespace ShamanMod.SkillStates
                 if (cb.master.minionOwnership == null) continue;
                 if (cb.master.minionOwnership.ownerMaster == null) continue;
 
-                if (cb.baseNameToken == "MANTI_ACOLYTE_BODY_NAME" && cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex)
+                if (cb.name == "AcolyteBody(Clone)" && cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex)
                 {
                     if (cb.master && cb.master.minionOwnership.ownerMaster.GetBody() == base.characterBody)
                     {
@@ -96,7 +96,7 @@ namespace ShamanMod.SkillStates
                     if (cb.master.minionOwnership == null) continue;
                     if (cb.master.minionOwnership.ownerMaster == null) continue;
 
-                    if (cb.baseNameToken == "MANTI_ACOLYTE_BODY_NAME" && cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex)
+                    if (cb.name == "AcolyteBody(Clone)" && cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex)
                     {
                         if (cb.gameObject.GetComponent<HealthComponent>() && cb.master && cb.master.minionOwnership.ownerMaster.GetBody() == base.characterBody)
                         {
@@ -135,7 +135,7 @@ namespace ShamanMod.SkillStates
                 if (cb.master.minionOwnership == null) continue;
                 if (cb.master.minionOwnership.ownerMaster == null) continue;
 
-                if (cb.baseNameToken == "MANTI_ACOLYTEANGEL_BODY_NAME" && cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex)
+                if (cb.name == "AcolyteAngelBody(Clone)" && cb.gameObject.GetComponent<TeamComponent>().teamIndex == base.gameObject.GetComponent<TeamComponent>().teamIndex)
                 {
                     if (NetworkServer.active && cb.master && cb.master.minionOwnership.ownerMaster.GetBody() == base.characterBody)
                     {
