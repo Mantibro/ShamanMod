@@ -1,4 +1,5 @@
-﻿using BepInEx;
+using BepInEx;
+using BepInEx.Configuration;
 using ShamanMod.Modules.Survivors;
 using R2API.Utils;
 using RoR2;
@@ -37,6 +38,7 @@ namespace ShamanMod
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MANTI";
 
+        public static ConfigFile ShamanConfigFile = new ConfigFile ("ShamanMod.cfg", true);
         public static ShamanPlugin instance;
 
         private void Awake()
@@ -130,7 +132,8 @@ namespace ShamanMod
                         manner.position = spawn_pos;
                         manner.Perform();
 
-                        float timeneeded = Mathf.Clamp(45f - ((self.attackSpeed - 1f) * 10f), 15f, 60f);
+                        float timeneeded = Mathf.Clamp(Modules.Config.F_DefSpawnTime.Value - ((self.attackSpeed - 1f) * 10f), Modules.Config.F_MinSpawnTime.Value, Modules.Config.F_MaxSpawnTime.Value);
+                        //float timeneeded = Mathf.Clamp(45 - ((self.attackSpeed - 1f) * 10f), 15, 60);
                         self.AddTimedBuff(Modules.Buffs.summonCooldownDebuff, timeneeded);
                     }
                 }
