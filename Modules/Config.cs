@@ -1,22 +1,34 @@
-﻿using BepInEx.Configuration;
+using BepInEx.Configuration;
 using UnityEngine;
 
 namespace ShamanMod.Modules
 {
     public static class Config
     {
+        public static ConfigEntry<float> F_DefSpawnTime { get; set; }
+        public static ConfigEntry<float> F_MinSpawnTime { get; set; }
+        public static ConfigEntry<float> F_MaxSpawnTime { get; set; }
+
         public static void ReadConfig()
         {
-
-        }
-
-        // this helper automatically makes config entries for disabling survivors
-        public static ConfigEntry<bool> CharacterEnableConfig(string characterName, string description = "Set to false to disable this character", bool enabledDefault = true) {
-
-            return ShamanPlugin.instance.Config.Bind<bool>("General",
-                                                          "Enable " + characterName,
-                                                          enabledDefault,
-                                                          description);
+            F_DefSpawnTime = ShamanPlugin.instance.Config.Bind<float>(
+                "Shaman Properties",
+                "Default Acolyte spawn rate",
+                45,
+                "Seconds until an Acolyte is spawned, before Attack speed calculations."
+            );
+            F_MinSpawnTime = ShamanPlugin.instance.Config.Bind<float>(
+                "Shaman Properties",
+                "Minimum Acolyte spawn rate",
+                15,
+                "Minimum seconds until an Acolyte is spawned."
+            );
+            F_MaxSpawnTime = ShamanPlugin.instance.Config.Bind<float>(
+                "Shaman Properties",
+                "Maximum Acolyte spawn rate",
+                60,
+                "Maximum seconds until an Acolyte is spawned."
+            );
         }
     }
 }
