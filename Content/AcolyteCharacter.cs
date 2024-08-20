@@ -1,4 +1,4 @@
-﻿using BepInEx.Configuration;
+using BepInEx.Configuration;
 using RoR2;
 using RoR2.Skills;
 using System;
@@ -19,8 +19,6 @@ namespace ShamanMod.Modules.Characters
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
-            armor = 0f,
-            armorGrowth = 0f,
             bodyName = "AcolyteBody",
             bodyNameToken = ACOLYTE_PREFIX + "NAME",
             subtitleNameToken = ShamanPlugin.DEVELOPER_PREFIX + "_ACOLYTE_SUBTITLE",
@@ -30,11 +28,27 @@ namespace ShamanMod.Modules.Characters
             crosshair = Modules.Assets.LoadCrosshair("TiltedBracket"),
             podPrefab = null,
 
-            maxHealth = 160f,
-            healthRegen = 1.2f,
-            damage = 14f,
-            moveSpeed = 7f,
-            jumpCount = 1,
+            maxHealth = Modules.Config.F_AcolyteBMaxHealth.Value,//160 By default.
+            healthRegen = Modules.Config.F_AcolyteBRegen.Value,  //1.2
+            armor = Modules.Config.F_AcolyteBArmor.Value,        //0
+            shield = Modules.Config.F_AcolyteBShield.Value,      //0
+            jumpCount = 1,                                       //1
+            damage = Modules.Config.F_AcolyteBDamage.Value,      //14
+            attackSpeed = Modules.Config.F_AcolyteBAtkSpd.Value, //1
+            crit = Modules.Config.F_AcolyteBCrit.Value,          //1
+            moveSpeed = Modules.Config.F_AcolyteBSpeed.Value,    //7
+            acceleration = Modules.Config.F_AcolyteBAccel.Value, //80
+            jumpPower = Modules.Config.F_AcolyteBJump.Value,     //15
+
+            healthGrowth = Modules.Config.F_AcolyteLMaxHealth.Value,     //30
+            regenGrowth = Modules.Config.F_AcolyteLRegen.Value,          //0.2
+            armorGrowth = Modules.Config.F_AcolyteLArmor.Value,          //0
+            shieldGrowth = Modules.Config.F_AcolyteLShield.Value,        //0
+            damageGrowth = Modules.Config.F_AcolyteLDamage.Value,        //2.4
+            attackSpeedGrowth = Modules.Config.F_AcolyteLAtkSpd.Value,   //0
+            critGrowth = Modules.Config.F_AcolyteLCrit.Value,            //0
+            moveSpeedGrowth = Modules.Config.F_AcolyteLSpeed.Value,      //0
+            jumpPowerGrowth = Modules.Config.F_AcolyteLJump.Value,       //0
         };
 
         public override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[]
