@@ -44,7 +44,7 @@ namespace ShamanMod
             instance = this;
 
             Log.Init(Logger);
-            Modules.Assets.Initialize(); // load assets and read config
+            Modules.ShamanAssets.Initialize(); // load assets and read config
             Modules.Config.ReadConfig();
             Modules.States.RegisterStates(); // register states for networking
             Modules.Buffs.RegisterBuffs(); // add and register custom buffs/debuffs

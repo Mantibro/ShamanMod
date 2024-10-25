@@ -45,8 +45,8 @@ namespace ShamanMod.Modules
             staffCastExplosion.destroyOnEnemy = true;
             staffCastExplosion.destroyOnWorld = true;
             staffCastExplosion.lifetime = 20f;
-            staffCastExplosion.impactEffect = Modules.Assets.magicImpact2Effect;
-            staffCastExplosion.lifetimeExpiredSound = Modules.Assets.CreateNetworkSoundEventDef("ShamanStaffCast");
+            staffCastExplosion.impactEffect = Modules.ShamanAssets.magicImpact2Effect;
+            staffCastExplosion.lifetimeExpiredSound = Modules.ShamanAssets.CreateNetworkSoundEventDef("ShamanStaffCast");
             staffCastExplosion.timerAfterImpact = false;
             staffCastExplosion.lifetimeAfterImpact = 0f;
             staffCastExplosion.blastDamageCoefficient = 0f;
@@ -55,7 +55,7 @@ namespace ShamanMod.Modules
 
             ProjectileController castController = staffCastPrefab.GetComponent<ProjectileController>();
 
-            if (Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("ShamanMagicPellet") != null)
+            if (Modules.ShamanAssets.mainAssetBundle.LoadAsset<GameObject>("ShamanMagicPellet") != null)
             {
                 castController.ghostPrefab = CreateGhostPrefab("ShamanMagicPellet", false);
             }
@@ -74,7 +74,7 @@ namespace ShamanMod.Modules
             healingImpactExplosion.destroyOnEnemy = true;
             healingImpactExplosion.destroyOnWorld = true;
             healingImpactExplosion.lifetime = 20f;
-            healingImpactExplosion.impactEffect = Modules.Assets.magicImpact2Effect;
+            healingImpactExplosion.impactEffect = Modules.ShamanAssets.magicImpact2Effect;
             //healingImpactExplosion.lifetimeExpiredSound = Modules.Assets.CreateNetworkSoundEventDef("ShamanHealOrbExplode");
             healingImpactExplosion.timerAfterImpact = false;
             healingImpactExplosion.lifetimeAfterImpact = 0f;
@@ -85,7 +85,7 @@ namespace ShamanMod.Modules
             ProjectileController healOrbController = healOrbPrefab.GetComponent<ProjectileController>();
             healOrbPrefab.AddComponent<HealOrbImpact>();
           
-            if (Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("ShamanHealOrb") != null)
+            if (Modules.ShamanAssets.mainAssetBundle.LoadAsset<GameObject>("ShamanHealOrb") != null)
             {
                 healOrbController.ghostPrefab = CreateGhostPrefab("ShamanHealOrb", false);
             }
@@ -104,7 +104,7 @@ namespace ShamanMod.Modules
             curseImpactExplosion.destroyOnEnemy = true;
             curseImpactExplosion.destroyOnWorld = true;
             curseImpactExplosion.lifetime = 20f;
-            curseImpactExplosion.impactEffect = Modules.Assets.explodeSkullEffect;
+            curseImpactExplosion.impactEffect = Modules.ShamanAssets.explodeSkullEffect;
             //curseImpactExplosion.lifetimeExpiredSound = Modules.Assets.CreateNetworkSoundEventDef("ShamanCurseSkullExplode");
             curseImpactExplosion.timerAfterImpact = false;
             curseImpactExplosion.lifetimeAfterImpact = 0f;
@@ -116,7 +116,7 @@ namespace ShamanMod.Modules
 
             ProjectileController curseSkullController = curseSkullPrefab.GetComponent<ProjectileController>();
 
-            if (Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("ShamanCurseSkull") != null)
+            if (Modules.ShamanAssets.mainAssetBundle.LoadAsset<GameObject>("ShamanCurseSkull") != null)
             {
                 curseSkullController.ghostPrefab = CreateGhostPrefab("ShamanCurseSkull", false);
             }
@@ -160,7 +160,7 @@ namespace ShamanMod.Modules
                     }
                 }
 
-                EffectManager.SimpleImpactEffect(Modules.Assets.healBallExplodeEffect, gameObject.transform.position, Vector3.up, true);
+                EffectManager.SimpleImpactEffect(Modules.ShamanAssets.healBallExplodeEffect, gameObject.transform.position, Vector3.up, true);
 
                 hasImpacted = true;
             }
@@ -261,13 +261,13 @@ namespace ShamanMod.Modules
 
         private static GameObject CreateGhostPrefab(string ghostName, bool convertShaders = true)
         {
-            GameObject ghostPrefab = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>(ghostName);
+            GameObject ghostPrefab = Modules.ShamanAssets.mainAssetBundle.LoadAsset<GameObject>(ghostName);
             if (!ghostPrefab.GetComponent<NetworkIdentity>()) ghostPrefab.AddComponent<NetworkIdentity>();
             if (!ghostPrefab.GetComponent<ProjectileGhostController>()) ghostPrefab.AddComponent<ProjectileGhostController>();
 
             if (convertShaders)
             {
-                Modules.Assets.ConvertAllRenderersToHopooShader(ghostPrefab);
+                Modules.ShamanAssets.ConvertAllRenderersToHopooShader(ghostPrefab);
             }
 
             return ghostPrefab;

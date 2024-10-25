@@ -19,7 +19,7 @@ namespace ShamanMod.Modules
             if (tempMat)
                 return tempMat;
 
-            tempMat = Assets.mainAssetBundle.LoadAsset<Material>(materialName);
+            tempMat = ShamanAssets.mainAssetBundle.LoadAsset<Material>(materialName);
 
             if (!tempMat)
             {

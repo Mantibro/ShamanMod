@@ -57,7 +57,7 @@ namespace ShamanMod.SkillStates
             if (noSacrificed < 6)
             {
                 Util.PlaySound("ShamanCastFusionFail", base.gameObject);
-                EffectManager.SimpleMuzzleFlash(Modules.Assets.magicImpact2Effect, base.gameObject, this.muzzleString, false);
+                EffectManager.SimpleMuzzleFlash(Modules.ShamanAssets.magicImpact2Effect, base.gameObject, this.muzzleString, false);
                 this.duration = 0.25f;
                 return;
             }
@@ -65,7 +65,7 @@ namespace ShamanMod.SkillStates
             base.OnEnter();
 
             Util.PlaySound("ShamanAcolyteAngelFuse", base.gameObject);
-            EffectManager.SimpleMuzzleFlash(Modules.Assets.castFusionEffect, base.gameObject, this.muzzleString, false);
+            EffectManager.SimpleMuzzleFlash(Modules.ShamanAssets.castFusionEffect, base.gameObject, this.muzzleString, false);
 
             this.duration = 4f;
             base.characterBody.SetAimTimer(5f);

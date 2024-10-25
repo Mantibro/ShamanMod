@@ -1,0 +1,15 @@
+D:\shamanmod\ShamanMod\bin\Debug\netstandard2.1\ShamanMod.deps.json
+D:\shamanmod\ShamanMod\bin\Debug\netstandard2.1\ShamanMod.dll
+D:\shamanmod\ShamanMod\bin\Debug\netstandard2.1\ShamanMod.pdb
+D:\shamanmod\ShamanMod\bin\Debug\netstandard2.1\Aetherium.dll
+D:\shamanmod\ShamanMod\bin\Debug\netstandard2.1\AncientScepter.dll
+D:\shamanmod\ShamanMod\bin\Debug\netstandard2.1\R2API.dll
+D:\shamanmod\ShamanMod\bin\Debug\netstandard2.1\R2API.xml
+D:\shamanmod\ShamanMod\obj\Debug\netstandard2.1\ShamanMod.csproj.AssemblyReference.cache
+D:\shamanmod\ShamanMod\obj\Debug\netstandard2.1\ShamanMod.GeneratedMSBuildEditorConfig.editorconfig
+D:\shamanmod\ShamanMod\obj\Debug\netstandard2.1\ShamanMod.AssemblyInfoInputs.cache
+D:\shamanmod\ShamanMod\obj\Debug\netstandard2.1\ShamanMod.AssemblyInfo.cs
+D:\shamanmod\ShamanMod\obj\Debug\netstandard2.1\ShamanMod.csproj.CoreCompileInputs.cache
+D:\shamanmod\ShamanMod\obj\Debug\netstandard2.1\ShamanMod.csproj.CopyComplete
+D:\shamanmod\ShamanMod\obj\Debug\netstandard2.1\ShamanMod.dll
+D:\shamanmod\ShamanMod\obj\Debug\netstandard2.1\ShamanMod.pdb

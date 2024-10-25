@@ -1061,14 +1061,14 @@ namespace ShamanMod.Modules.Characters
 
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.KomradeSpectre.Aetherium"))
             {
-                SetAetheriumDisplayRules(itemDisplayRules);
+                //SetAetheriumDisplayRules(itemDisplayRules);
             }
 
         }
 
 
         #region aeth
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        /*[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void SetAetheriumDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
         {
 
@@ -1182,7 +1182,7 @@ namespace ShamanMod.Modules.Characters
                                                                        new Vector3(-0.02144F, 3.36076F, -0.34862F),
                                                                        new Vector3(0F, 0F, 4.77517F),
                                                                        new Vector3(0.52945F, 0.52945F, 0.52945F)));
-        }
+        }*/
         #endregion aeth
     }
 }

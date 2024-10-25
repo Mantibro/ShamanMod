@@ -26,8 +26,8 @@ namespace ShamanMod.SkillStates
             this.swingSoundString = "ShamanAcolyteSwing";
             this.hitSoundString = ""; //ShamanAcolyteSwingImpact
             this.muzzleString = "MeleeHitbox";
-            this.swingEffectPrefab = Modules.Assets.acolyteSwingEffect;
-            this.hitEffectPrefab = Modules.Assets.magicImpactEffect;
+            this.swingEffectPrefab = Modules.ShamanAssets.acolyteSwingEffect;
+            this.hitEffectPrefab = Modules.ShamanAssets.magicImpactEffect;
 
             base.OnEnter();
         }

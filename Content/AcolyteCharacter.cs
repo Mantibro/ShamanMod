@@ -26,8 +26,8 @@ namespace ShamanMod.Modules.Characters
             subtitleNameToken = ShamanPlugin.DEVELOPER_PREFIX + "_ACOLYTE_SUBTITLE",
             bodyNameToClone = "Lemurian",
             bodyColor = new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
-            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texAcolyteIcon"),
-            crosshair = Modules.Assets.LoadCrosshair("TiltedBracket"),
+            characterPortrait = ShamanAssets.mainAssetBundle.LoadAsset<Texture>("texAcolyteIcon"),
+            crosshair = Modules.ShamanAssets.LoadCrosshair("TiltedBracket"),
             podPrefab = null,
 
             maxHealth = 160f,
@@ -230,7 +230,7 @@ namespace ShamanMod.Modules.Characters
                 skillName = "ACOLYTE_SHOOT",
                 skillNameToken = "ACOLYTE_SHOOT",
                 skillDescriptionToken = "ACOLYTE_SHOOT",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.AcolyteShootAttack)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 3,
@@ -259,7 +259,7 @@ namespace ShamanMod.Modules.Characters
                 skillName = "ACOLYTE_MELEE",
                 skillNameToken = "ACOLYTE_MELEE",
                 skillDescriptionToken = "ACOLYTE_MELEE",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.AcolyteMeleeAttack)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -293,7 +293,7 @@ namespace ShamanMod.Modules.Characters
 
             //this creates a SkinDef with all default fields
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef(ACOLYTE_PREFIX + "DEFAULT_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanDefault"),
+                ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanDefault"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject);
 

@@ -21,19 +21,19 @@ namespace ShamanMod.Modules
                 false);
 
             summonCooldownDebuff = AddNewBuff("ShamanSummonCooldownDebuff",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texCooldownDebuff"),
+                ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texCooldownDebuff"),
                 new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
                 false,
                 false);
 
             acolyteBeastSummonBuff = AddNewBuff("AcolyteBeastPowerBuff",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texCooldownDebuff"),
+                ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texCooldownDebuff"),
                 new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
                 true,
                 false);
 
             acolyteFrenzyBuff = AddNewBuff("AcolyteFrenzyBuff",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texFeralBuff"),
+                ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texFeralBuff"),
                 new Color(0.8f, 0f, 0f),
                 false,
                 false);

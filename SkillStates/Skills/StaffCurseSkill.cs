@@ -23,7 +23,7 @@ namespace ShamanMod.SkillStates
         public override void OnEnter()
         {
             base.projectilePrefab = Modules.Projectiles.curseSkullPrefab;
-            base.effectPrefab = Modules.Assets.staffCastEffect;
+            base.effectPrefab = Modules.ShamanAssets.staffCastEffect;
             base.targetMuzzle = "Muzzle";
 
             base.attackSoundString = "ShamanCurseSkullFire";

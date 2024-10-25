@@ -1,29 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Desktop\\shamanmod\\ShamanMod\\ShamanMod.csproj": {}
+    "D:\\shamanmod\\ShamanMod\\ShamanMod.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Desktop\\shamanmod\\ShamanMod\\ShamanMod.csproj": {
+    "D:\\shamanmod\\ShamanMod\\ShamanMod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Desktop\\shamanmod\\ShamanMod\\ShamanMod.csproj",
+        "projectUniqueName": "D:\\shamanmod\\ShamanMod\\ShamanMod.csproj",
         "projectName": "ShamanMod",
-        "projectPath": "C:\\Users\\PC\\Desktop\\shamanmod\\ShamanMod\\ShamanMod.csproj",
+        "projectPath": "D:\\shamanmod\\ShamanMod\\ShamanMod.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Desktop\\shamanmod\\ShamanMod\\obj\\",
+        "outputPath": "D:\\shamanmod\\ShamanMod\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\vs_com\\SDK\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC\\Desktop\\shamanmod\\NuGet.Config",
+          "D:\\shamanmod\\NuGet.Config",
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netstandard2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -31,8 +31,8 @@
           "https://nuget.bepinex.dev/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
             "projectReferences": {}
           }
         },
@@ -43,8 +43,8 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
           "dependencies": {
             "BepInEx.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -54,21 +54,22 @@
             },
             "BepInEx.Core": {
               "target": "Package",
-              "version": "[5.4.19, )"
+              "version": "[5.*, )"
             },
-            "NETStandard.Library": {
-              "suppressParent": "All",
+            "MMHOOK.RoR2": {
               "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[2024.9.5, )",
+              "noWarn": [
+                "NU1701"
+              ]
             },
             "RiskOfRain2.GameLibs": {
               "target": "Package",
-              "version": "[1.2.1-r.1, )"
+              "version": "[1.3.2-r.1, )"
             },
             "UnityEngine.Modules": {
               "target": "Package",
-              "version": "[2019.4.26, )"
+              "version": "[2021.3.33, )"
             }
           },
           "imports": [
@@ -81,6 +82,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
         }
       }

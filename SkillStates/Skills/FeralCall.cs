@@ -14,7 +14,7 @@ namespace ShamanMod.SkillStates
             base.OnEnter();
 
             Util.PlaySound("ShamanFrenzyCast", base.gameObject);
-            EffectManager.SimpleMuzzleFlash(Modules.Assets.magicImpact2Effect, base.gameObject, "Muzzle", false);
+            EffectManager.SimpleMuzzleFlash(Modules.ShamanAssets.magicImpact2Effect, base.gameObject, "Muzzle", false);
 
             var literallyeverything = Resources.FindObjectsOfTypeAll(typeof(CharacterBody));
 
@@ -44,7 +44,7 @@ namespace ShamanMod.SkillStates
 
                         }
                         Util.PlaySound("ShamanAcolyteFrenziedGrowl", cb.gameObject);
-                        EffectManager.SimpleImpactEffect(Modules.Assets.acolyteSummonEffect, cb.gameObject.transform.position, Vector3.up, true);
+                        EffectManager.SimpleImpactEffect(Modules.ShamanAssets.acolyteSummonEffect, cb.gameObject.transform.position, Vector3.up, true);
                     }
                 }
             }

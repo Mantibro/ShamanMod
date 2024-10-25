@@ -45,7 +45,7 @@ namespace ShamanMod.SkillStates
 
                 base.characterBody.AddSpreadBloom(1.5f);
                 //EffectManager.SimpleMuzzleFlash(EntityStates.Commando.CommandoWeapon.FirePistol2.muzzleEffectPrefab, base.gameObject, this.muzzleString, false);
-                EffectManager.SimpleMuzzleFlash(Modules.Assets.staffCastEffect, base.gameObject, this.muzzleString, false);
+                EffectManager.SimpleMuzzleFlash(Modules.ShamanAssets.staffCastEffect, base.gameObject, this.muzzleString, false);
                 Util.PlaySound("ShamanAcolyteShoot", base.gameObject);
 
                 if (base.isAuthority)
@@ -81,7 +81,7 @@ namespace ShamanMod.SkillStates
                         spreadPitchScale = 0f,
                         spreadYawScale = 0f,
                         queryTriggerInteraction = QueryTriggerInteraction.UseGlobal,
-                        hitEffectPrefab = Modules.Assets.magicImpact2Effect,
+                        hitEffectPrefab = Modules.ShamanAssets.magicImpact2Effect,
                     }.Fire();
                 }
             }

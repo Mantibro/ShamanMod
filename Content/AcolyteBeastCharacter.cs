@@ -28,8 +28,8 @@ namespace ShamanMod.Modules.Characters
             subtitleNameToken = ShamanPlugin.DEVELOPER_PREFIX + "_ACOLYTEBEAST_SUBTITLE",
             bodyNameToClone = "Lemurian",
             bodyColor = new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
-            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texAcolyteBeastIcon"),
-            crosshair = Modules.Assets.LoadCrosshair("TiltedBracket"),
+            characterPortrait = ShamanAssets.mainAssetBundle.LoadAsset<Texture>("texAcolyteBeastIcon"),
+            crosshair = Modules.ShamanAssets.LoadCrosshair("TiltedBracket"),
             podPrefab = null,
 
             maxHealth = 325f,
@@ -280,7 +280,7 @@ namespace ShamanMod.Modules.Characters
                 skillName = "ACOLYTEBEAST_SHOOT",
                 skillNameToken = "ACOLYTEBEAST_SHOOT",
                 skillDescriptionToken = "ACOLYTEBEAST_SHOOT",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.AcolyteBeastShootAttack)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 3,
@@ -309,7 +309,7 @@ namespace ShamanMod.Modules.Characters
                 skillName = "ACOLYTEBEAST_SWIPE",
                 skillNameToken = "ACOLYTEBEAST_SWIPE",
                 skillDescriptionToken = "ACOLYTEBEAST_SWIPE",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.AcolyteBeastMeleeSwipe)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
@@ -338,7 +338,7 @@ namespace ShamanMod.Modules.Characters
                 skillName = "ACOLYTEBEAST_SLAM",
                 skillNameToken = "ACOLYTEBEAST_SLAM",
                 skillDescriptionToken = "ACOLYTEBEAST_SLAM",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.AcolyteBeastMeleeSlam)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
@@ -372,7 +372,7 @@ namespace ShamanMod.Modules.Characters
 
             //this creates a SkinDef with all default fields
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef(ACOLYTE_PREFIX + "DEFAULT_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanDefault"),
+                ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanDefault"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject);
 

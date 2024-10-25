@@ -110,7 +110,7 @@ namespace ShamanMod.Modules
                 new SkinDef.MeshReplacement
                 {
                     renderer = defaultRendererInfos[i].renderer,
-                    mesh = Assets.mainAssetBundle.LoadAsset<Mesh>(meshes[i])
+                    mesh = ShamanAssets.mainAssetBundle.LoadAsset<Mesh>(meshes[i])
                 });
             }
 

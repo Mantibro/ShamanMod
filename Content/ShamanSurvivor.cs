@@ -26,10 +26,10 @@ namespace ShamanMod.Modules.Survivors
             subtitleNameToken = SHAMAN_PREFIX + "SUBTITLE",
             sortPosition = 20f,
 
-            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("iconShaman"),
+            characterPortrait = ShamanAssets.mainAssetBundle.LoadAsset<Texture>("iconShaman"),
             bodyColor = new Color(0.0392156862745098f, 0.3137254901960784f, 0f),
 
-            crosshair = Modules.Assets.LoadCrosshair("Captain"),
+            crosshair = Modules.ShamanAssets.LoadCrosshair("Captain"),
             //podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
             podPrefab = null,
 
@@ -95,7 +95,7 @@ namespace ShamanMod.Modules.Survivors
             skillLocator.passiveSkill.enabled = true;
             skillLocator.passiveSkill.skillNameToken = prefix + "_SHAMAN_BODY_PASSIVE_NAME";
             skillLocator.passiveSkill.skillDescriptionToken = prefix + "_SHAMAN_BODY_PASSIVE_DESCRIPTION";
-            skillLocator.passiveSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanPassive");
+            skillLocator.passiveSkill.icon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanPassive");
 
             #region Primary
             SkillDef shootSkillDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
@@ -103,7 +103,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_PRIMARY_STAFF_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_PRIMARY_STAFF_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_PRIMARY_STAFF_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanPrimary"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanPrimary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.StaffCast)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -133,7 +133,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_SECONDARY_HEALORB_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_SECONDARY_HEALORB_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_SECONDARY_HEALORB_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondary"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.StaffHealingSkill)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -157,7 +157,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_SECONDARY_ALT_CURSEORB_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_SECONDARY_ALT_CURSEORB_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_SECONDARY_ALT_CURSEORB_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondaryAlt"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSecondaryAlt"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.StaffCurseSkill)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -186,7 +186,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_UTILITY_GHOSTVEIL_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_UTILITY_GHOSTVEIL_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_UTILITY_GHOSTVEIL_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanUtility"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanUtility"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.GhostVeil)),
                 activationStateMachineName = "Slide",
                 baseMaxStock = 1,
@@ -210,7 +210,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_UTILITY_ANCESTRY_ALT_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_UTILITY_ANCESTRY_ALT_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_UTILITY_ANCESTRY_ALT_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanUtilityAlt"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanUtilityAlt"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Ancestry)),
                 activationStateMachineName = "Slide",
                 baseMaxStock = 1,
@@ -239,7 +239,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecial"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecial"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DistortedFusion)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
@@ -263,7 +263,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialAlt"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialAlt"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FeralCall)),
                 activationStateMachineName = "Slide",
                 baseMaxStock = 1,
@@ -302,7 +302,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_SPECIAL_FUSION_SCEPTER_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialScepter"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialScepter"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.DistortedFusionScepter)),
                 activationStateMachineName = "Body",
                 baseMaxStock = 1,
@@ -328,7 +328,7 @@ namespace ShamanMod.Modules.Survivors
                 skillName = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_SCEPTER_NAME",
                 skillNameToken = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_SCEPTER_NAME",
                 skillDescriptionToken = prefix + "_SHAMAN_BODY_SPECIAL_ALT_FERALCALL_SCEPTER_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialAltScepter"),
+                skillIcon = Modules.ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanSpecialAltScepter"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.FeralCallScepter)),
                 activationStateMachineName = "Slide",
                 baseMaxStock = 1,
@@ -362,7 +362,7 @@ namespace ShamanMod.Modules.Survivors
             #region DefaultSkin
             //this creates a SkinDef with all default fields
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef(SHAMAN_PREFIX + "DEFAULT_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanDefault"),
+                ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanDefault"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject);
 
@@ -381,7 +381,7 @@ namespace ShamanMod.Modules.Survivors
             
             //creating a new skindef as we did before
             SkinDef masterySkin = Modules.Skins.CreateSkinDef(ShamanPlugin.DEVELOPER_PREFIX + "_SHAMAN_BODY_MASTERY_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texShamanMastery"),
+                ShamanAssets.mainAssetBundle.LoadAsset<Sprite>("texShamanMastery"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 masterySkinUnlockableDef);
