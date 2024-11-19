@@ -1,4 +1,4 @@
-﻿using BepInEx.Configuration;
+using BepInEx.Configuration;
 using RoR2;
 using RoR2.Skills;
 using System;
@@ -21,8 +21,6 @@ namespace ShamanMod.Modules.Characters
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
-            armor = 0f,
-            armorGrowth = 0f,
             bodyName = "AcolyteBeastBody",
             bodyNameToken = ACOLYTE_PREFIX + "NAME",
             subtitleNameToken = ShamanPlugin.DEVELOPER_PREFIX + "_ACOLYTEBEAST_SUBTITLE",
@@ -32,11 +30,27 @@ namespace ShamanMod.Modules.Characters
             crosshair = Modules.ShamanAssets.LoadCrosshair("TiltedBracket"),
             podPrefab = null,
 
-            maxHealth = 325f,
-            healthRegen = 0.8f,
-            damage = 12f,
-            moveSpeed = 7f,
-            jumpCount = 1,
+            maxHealth = Modules.Config.F_AcolyteBeastBMaxHealth.Value,  //325 By default.
+            healthRegen = Modules.Config.F_AcolyteBeastBRegen.Value,    //0.8
+            armor = Modules.Config.F_AcolyteBeastBArmor.Value,          //0
+            shield = Modules.Config.F_AcolyteBeastBShield.Value,        //0
+            jumpCount = 1,                                              //1
+            damage = Modules.Config.F_AcolyteBeastBDamage.Value,        //14
+            attackSpeed = Modules.Config.F_AcolyteBeastBAtkSpd.Value,   //1
+            crit = Modules.Config.F_AcolyteBeastBCrit.Value,            //1
+            moveSpeed = Modules.Config.F_AcolyteBeastBSpeed.Value,      //7
+            acceleration = Modules.Config.F_AcolyteBeastBAccel.Value,   //80
+            jumpPower = Modules.Config.F_AcolyteBeastBJump.Value,       //15
+
+            healthGrowth = Modules.Config.F_AcolyteBeastLMaxHealth.Value,     //30
+            regenGrowth = Modules.Config.F_AcolyteBeastLRegen.Value,          //0.2
+            armorGrowth = Modules.Config.F_AcolyteBeastLArmor.Value,          //0
+            shieldGrowth = Modules.Config.F_AcolyteBeastLShield.Value,        //0
+            damageGrowth = Modules.Config.F_AcolyteBeastLDamage.Value,        //2.4
+            attackSpeedGrowth = Modules.Config.F_AcolyteBeastLAtkSpd.Value,   //0
+            critGrowth = Modules.Config.F_AcolyteBeastLCrit.Value,            //0
+            moveSpeedGrowth = Modules.Config.F_AcolyteBeastLSpeed.Value,      //0
+            jumpPowerGrowth = Modules.Config.F_AcolyteBeastLJump.Value,       //0
         };
 
         public override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[]

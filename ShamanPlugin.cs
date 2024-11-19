@@ -1,4 +1,5 @@
-﻿using BepInEx;
+using BepInEx;
+using BepInEx.Configuration;
 using ShamanMod.Modules.Survivors;
 using R2API.Utils;
 using RoR2;
@@ -32,11 +33,12 @@ namespace ShamanMod
         //   this shouldn't even have to be said
         public const string MODUID = "com.manti.ShamanMod";
         public const string MODNAME = "ShamanMod";
-        public const string MODVERSION = "1.1.1";
+        public const string MODVERSION = "1.1.2";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MANTI";
 
+        public static ConfigFile ShamanConfigFile = new ConfigFile ("ShamanMod.cfg", true);
         public static ShamanPlugin instance;
 
         private void Awake()
@@ -105,7 +107,7 @@ namespace ShamanMod
             // summon the acolytes
             if (self)
             {
-                if (self.baseNameToken != DEVELOPER_PREFIX + "_SHAMAN_BODY_NAME")
+                if (self.name != "ShamanBody(Clone)")
                     return;
 
                 if (!self.HasBuff(Modules.Buffs.summonCooldownDebuff))
@@ -130,7 +132,8 @@ namespace ShamanMod
                         manner.position = spawn_pos;
                         manner.Perform();
 
-                        float timeneeded = Mathf.Clamp(45f - ((self.attackSpeed - 1f) * 10f), 15f, 60f);
+                        float timeneeded = Mathf.Clamp(Modules.Config.F_DefSpawnTime.Value - ((self.attackSpeed - 1f) * 10f), Modules.Config.F_MinSpawnTime.Value, Modules.Config.F_MaxSpawnTime.Value);
+                        //float timeneeded = Mathf.Clamp(45 - ((self.attackSpeed - 1f) * 10f), 15, 60);
                         self.AddTimedBuff(Modules.Buffs.summonCooldownDebuff, timeneeded);
                     }
                 }
@@ -144,7 +147,7 @@ namespace ShamanMod
             {
                 if (NetworkServer.active)
                 {
-                    if (self.baseNameToken != DEVELOPER_PREFIX + "_SHAMAN_BODY_NAME")
+                    if (self.name != "ShamanBody(Clone)")
                         return;
 
                     //float timeneeded = Mathf.Clamp(45f - ( ( self.attackSpeed - 1f ) * 10f), 15f, 60f);

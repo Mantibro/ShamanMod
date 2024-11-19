@@ -1,4 +1,4 @@
-﻿using BepInEx.Configuration;
+using BepInEx.Configuration;
 using ShamanMod.Modules.Characters;
 using RoR2;
 using R2API;
@@ -33,11 +33,27 @@ namespace ShamanMod.Modules.Survivors
             //podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
             podPrefab = null,
 
-            maxHealth = 80f,
-            healthRegen = 0.9f,
-            armor = 0f,
+            maxHealth = Modules.Config.F_ShamanBMaxHealth.Value,//80 By default.
+            healthRegen = Modules.Config.F_ShamanBRegen.Value,  //0.9
+            armor = Modules.Config.F_ShamanBArmor.Value,        //0
+            shield = Modules.Config.F_ShamanBShield.Value,      //0
+            jumpCount = Modules.Config.I_ShamanJumpCount.Value, //2
+            damage = Modules.Config.F_ShamanBDamage.Value,      //12
+            attackSpeed = Modules.Config.F_ShamanBAtkSpd.Value, //1
+            crit = Modules.Config.F_ShamanBCrit.Value,          //1
+            moveSpeed = Modules.Config.F_ShamanBSpeed.Value,    //7
+            acceleration = Modules.Config.F_ShamanBAccel.Value, //80
+            jumpPower = Modules.Config.F_ShamanBJump.Value,     //15
 
-            jumpCount = 2,
+            healthGrowth = Modules.Config.F_ShamanLMaxHealth.Value,     //30
+            regenGrowth = Modules.Config.F_ShamanLRegen.Value,          //0.2
+            armorGrowth = Modules.Config.F_ShamanLArmor.Value,          //0
+            shieldGrowth = Modules.Config.F_ShamanLShield.Value,        //0
+            damageGrowth = Modules.Config.F_ShamanLDamage.Value,        //2.4
+            attackSpeedGrowth = Modules.Config.F_ShamanLAtkSpd.Value,   //0
+            critGrowth = Modules.Config.F_ShamanLCrit.Value,            //0
+            moveSpeedGrowth = Modules.Config.F_ShamanLSpeed.Value,      //0
+            jumpPowerGrowth = Modules.Config.F_ShamanLJump.Value,       //0
         };
 
         public override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[] 

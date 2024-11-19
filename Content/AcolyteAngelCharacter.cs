@@ -1,4 +1,4 @@
-﻿using BepInEx.Configuration;
+using BepInEx.Configuration;
 using RoR2;
 using RoR2.Skills;
 using System;
@@ -21,8 +21,6 @@ namespace ShamanMod.Modules.Characters
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
-            armor = 25f,
-            armorGrowth = 0f,
             bodyName = "AcolyteAngelBody",
             bodyNameToken = ACOLYTEANGEL_PREFIX + "NAME",
             subtitleNameToken = ShamanPlugin.DEVELOPER_PREFIX + "_ACOLYTEANGEL_SUBTITLE",
@@ -32,11 +30,28 @@ namespace ShamanMod.Modules.Characters
             crosshair = Modules.ShamanAssets.LoadCrosshair("TiltedBracket"),
             podPrefab = null,
 
-            maxHealth = 775f,
-            healthRegen = -10f,
-            damage = 18f,
-            moveSpeed = 8f,
-            jumpCount = 0,
+            maxHealth = Modules.Config.F_AcolyteAngelBMaxHealth.Value,   //775 By default.
+            healthRegen = Modules.Config.F_AcolyteAngelBRegen.Value,     //-10
+            armor = Modules.Config.F_AcolyteAngelBArmor.Value,           //0
+            shield = Modules.Config.F_AcolyteAngelBShield.Value,         //0
+            jumpCount = 0,                                          //0
+            damage = Modules.Config.F_AcolyteAngelBDamage.Value,         //18
+            attackSpeed = Modules.Config.F_AcolyteAngelBAtkSpd.Value,    //1
+            crit = Modules.Config.F_AcolyteAngelBCrit.Value,             //1
+            moveSpeed = 8f,            
+            //moveSpeed = Modules.Config.F_AcolyteAngelBSpeed.Value,     //8
+            //acceleration = Modules.Config.F_AcolyteAngelBAccel.Value,  //80
+            //jumpPower = Modules.Config.F_AcolyteAngelBJump.Value,      //15
+
+            healthGrowth = Modules.Config.F_AcolyteAngelLMaxHealth.Value,     //30
+            regenGrowth = Modules.Config.F_AcolyteAngelLRegen.Value,          //0.2
+            armorGrowth = Modules.Config.F_AcolyteAngelLArmor.Value,          //0
+            shieldGrowth = Modules.Config.F_AcolyteAngelLShield.Value,        //0
+            damageGrowth = Modules.Config.F_AcolyteAngelLDamage.Value,        //2.4
+            attackSpeedGrowth = Modules.Config.F_AcolyteAngelLAtkSpd.Value,   //0
+            critGrowth = Modules.Config.F_AcolyteAngelLCrit.Value,            //0
+            //moveSpeedGrowth = Modules.Config.F_AcolyteAngelLSpeed.Value,    //0
+            //jumpPowerGrowth = Modules.Config.F_AcolyteAngelLJump.Value,     //0
         };
 
         public override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[]
